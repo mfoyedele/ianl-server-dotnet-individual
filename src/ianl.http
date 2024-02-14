@@ -1,0 +1,6 @@
+@ianl_HostAddress = http://localhost:5238
+
+GET {{ianl_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
