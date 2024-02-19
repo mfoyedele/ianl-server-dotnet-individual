@@ -20,7 +20,7 @@ namespace WebApi.Controllers
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<DeviceResponse>>> GetllDevices()
+    public async Task<ActionResult<IEnumerable<DeviceResponse>>> GetAllDevices()
     {
         var devices = await _repo.GetAllDevices();
         return Ok(_mapper.Map<IEnumerable<DeviceResponse>>(devices));
