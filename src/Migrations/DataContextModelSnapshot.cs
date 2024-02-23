@@ -108,7 +108,7 @@ namespace ianl.Migrations
 
                     b.HasKey("DeviceTypeId");
 
-                    b.ToTable("GetDevices");
+                    b.ToTable("GetDevice");
                 });
 
             modelBuilder.Entity("WebApi.Entities.Account", b =>

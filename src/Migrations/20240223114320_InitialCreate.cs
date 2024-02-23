@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ianl.Migrations
 {
-    public partial class initialmigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,7 +41,7 @@ namespace ianl.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "GetDevices",
+                name: "GetDevice",
                 columns: table => new
                 {
                     DeviceTypeId = table.Column<string>(type: "text", nullable: false),
@@ -52,7 +52,7 @@ namespace ianl.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GetDevices", x => x.DeviceTypeId);
+                    table.PrimaryKey("PK_GetDevice", x => x.DeviceTypeId);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,7 +91,7 @@ namespace ianl.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "GetDevices");
+                name: "GetDevice");
 
             migrationBuilder.DropTable(
                 name: "RefreshToken");

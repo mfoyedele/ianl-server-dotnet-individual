@@ -10,7 +10,7 @@ public class AutoMapperDevices : Profile
     {
         CreateMap<DeviceRequest, Devices>();
 
-        CreateMap<DeviceResponse, Devices>()
+        CreateMap<Devices, DeviceResponse>()
             .ForAllMembers(x => x.Condition(
                 (src, dest, prop) =>
                 {

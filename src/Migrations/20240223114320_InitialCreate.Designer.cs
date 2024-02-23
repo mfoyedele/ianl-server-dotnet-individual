@@ -12,8 +12,8 @@ using WebApi.Helpers;
 namespace ianl.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240210204843_initialmigration")]
-    partial class initialmigration
+    [Migration("20240223114320_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -110,7 +110,7 @@ namespace ianl.Migrations
 
                     b.HasKey("DeviceTypeId");
 
-                    b.ToTable("GetDevices");
+                    b.ToTable("GetDevice");
                 });
 
             modelBuilder.Entity("WebApi.Entities.Account", b =>
