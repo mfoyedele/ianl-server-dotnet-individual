@@ -2,6 +2,7 @@ namespace WebApi.Models.Devices;
 
 public class DeviceResponse
 {    
+    public int Id { get; set; }
     public string DeviceTypeId { get; set; }    
     public string Device { get; set; }
     public int Time {get; set; }
