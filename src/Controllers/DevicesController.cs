@@ -1,10 +1,10 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
-using WebApi.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using WebApi.Repositories;
 using WebApi.Entities;
+using WebApi.Models.Devices;
 
 namespace WebApi.Controllers
 {
