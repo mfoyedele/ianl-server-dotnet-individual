@@ -26,11 +26,11 @@ namespace WebApi.Repositories
         }
         public async Task<IEnumerable<Devices>> GetAllDevices()
         {
-            return await _context.GetDevice.ToListAsync();
+            return await _context.Devices.ToListAsync();
         }
         public async Task<Devices> DeviceTypeId(string DeviceId)
         {
-            return await _context.GetDevice!.FirstOrDefaultAsync(c => c.DeviceTypeId == DeviceId);
+            return await _context.Devices!.FirstOrDefaultAsync(c => c.DeviceTypeId == DeviceId);
         }
 
 
@@ -40,7 +40,7 @@ namespace WebApi.Repositories
             {
                 throw new ArgumentNullException(nameof(device));
             }
-            await _context.GetDevice!.AddAsync(device);
+            await _context.Devices!.AddAsync(device);
         }
 
     }

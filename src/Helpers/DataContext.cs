@@ -7,7 +7,7 @@ using WebApi.Entities;
 public class DataContext : DbContext
 {
     public DbSet<Account> Accounts { get; set; }  
-    public DbSet<Devices> GetDevice { get; set; }
+    public DbSet<Devices> Devices { get; set; }
    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

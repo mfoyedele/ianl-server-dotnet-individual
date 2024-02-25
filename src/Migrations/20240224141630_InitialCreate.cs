@@ -41,7 +41,7 @@ namespace ianl.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "GetDevice",
+                name: "Devices",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -54,7 +54,7 @@ namespace ianl.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GetDevice", x => x.Id);
+                    table.PrimaryKey("PK_Devices", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -93,7 +93,7 @@ namespace ianl.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "GetDevice");
+                name: "Devices");
 
             migrationBuilder.DropTable(
                 name: "RefreshToken");

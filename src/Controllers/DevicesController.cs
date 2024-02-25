@@ -27,8 +27,8 @@ namespace WebApi.Controllers
 
     }
 
-    [HttpGet("{DeviceTypeId}", Name = "GetDevice")]
-    public async Task<ActionResult<DeviceResponse>> GetDevice(string DeviceId)
+    [HttpGet("{DeviceTypeId}", Name = "Devices")]
+    public async Task<ActionResult<DeviceResponse>> Devices(string DeviceId)
     {
         var device = await _repo.DeviceTypeId(DeviceId);
           if (device != null)
@@ -47,7 +47,7 @@ namespace WebApi.Controllers
 
         var deviceReadDto = _mapper.Map<DeviceResponse>(deviceModel);
 
-        return CreatedAtRoute(nameof(GetDevice), new { DeviceId = deviceReadDto.DeviceTypeId}, deviceReadDto);
+        return CreatedAtRoute(nameof(Devices), new { DeviceId = deviceReadDto.DeviceTypeId}, deviceReadDto);
     } 
 
    }

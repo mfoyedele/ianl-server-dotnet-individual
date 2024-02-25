@@ -114,7 +114,7 @@ namespace ianl.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GetDevice");
+                    b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("WebApi.Entities.Account", b =>
