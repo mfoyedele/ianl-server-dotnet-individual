@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using WebApi.Authorization;
+using WebApi.Controllers;
 using WebApi.Helpers;
 using WebApi.Repositories;
 using WebApi.Services;
@@ -31,8 +32,10 @@ var builder = WebApplication.CreateBuilder(args);
     // configure DI for application services
     services.AddScoped<IJwtUtils, JwtUtils>();
     services.AddScoped<IAccountService, AccountService>();
-    services.AddScoped<IDeviceRepository, DeviceRepository>();
+    builder.Services.AddScoped<IDeviceRepo, DeviceRepo>();
+    builder.Services.AddScoped<TestAsyncActionFilter>();
     services.AddScoped<IEmailService, EmailService>();
+    builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 }
 
 // Add services to the container.
