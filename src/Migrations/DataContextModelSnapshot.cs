@@ -98,12 +98,15 @@ namespace ianl.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Data")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Device")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("DeviceTypeId")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("SeqNumber")

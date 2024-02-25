@@ -12,7 +12,7 @@ using WebApi.Helpers;
 namespace ianl.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240224141630_InitialCreate")]
+    [Migration("20240225192136_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,12 +100,15 @@ namespace ianl.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Data")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Device")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("DeviceTypeId")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("SeqNumber")

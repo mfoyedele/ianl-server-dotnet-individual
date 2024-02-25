@@ -46,11 +46,11 @@ namespace ianl.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    DeviceTypeId = table.Column<string>(type: "text", nullable: true),
-                    Device = table.Column<string>(type: "text", nullable: true),
+                    DeviceTypeId = table.Column<string>(type: "text", nullable: false),
+                    Device = table.Column<string>(type: "text", nullable: false),
                     Time = table.Column<int>(type: "integer", nullable: false),
                     SeqNumber = table.Column<int>(type: "integer", nullable: false),
-                    Data = table.Column<string>(type: "text", nullable: true)
+                    Data = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
