@@ -1,5 +1,5 @@
 namespace ianl.TEST;
-using Xuni;
+using Xunit;
 using WebApi.Controllers;
 
 public class UnitTest1
@@ -7,11 +7,7 @@ public class UnitTest1
     [Fact]
     public void Test1()
     {
-        Arrange
-
-        Act
-
-        Assert
+        
 
     }
 }

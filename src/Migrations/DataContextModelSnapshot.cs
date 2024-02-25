@@ -91,13 +91,19 @@ namespace ianl.Migrations
 
             modelBuilder.Entity("WebApi.Entities.Devices", b =>
                 {
-                    b.Property<string>("DeviceTypeId")
-                        .HasColumnType("text");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Data")
                         .HasColumnType("text");
 
                     b.Property<string>("Device")
+                        .HasColumnType("text");
+
+                    b.Property<string>("DeviceTypeId")
                         .HasColumnType("text");
 
                     b.Property<int>("SeqNumber")
@@ -106,7 +112,7 @@ namespace ianl.Migrations
                     b.Property<int>("Time")
                         .HasColumnType("integer");
 
-                    b.HasKey("DeviceTypeId");
+                    b.HasKey("Id");
 
                     b.ToTable("GetDevice");
                 });

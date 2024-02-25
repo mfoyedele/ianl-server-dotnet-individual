@@ -44,7 +44,9 @@ namespace ianl.Migrations
                 name: "GetDevice",
                 columns: table => new
                 {
-                    DeviceTypeId = table.Column<string>(type: "text", nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    DeviceTypeId = table.Column<string>(type: "text", nullable: true),
                     Device = table.Column<string>(type: "text", nullable: true),
                     Time = table.Column<int>(type: "integer", nullable: false),
                     SeqNumber = table.Column<int>(type: "integer", nullable: false),
@@ -52,7 +54,7 @@ namespace ianl.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GetDevice", x => x.DeviceTypeId);
+                    table.PrimaryKey("PK_GetDevice", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(

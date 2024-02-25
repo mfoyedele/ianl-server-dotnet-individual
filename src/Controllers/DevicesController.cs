@@ -6,9 +6,9 @@ using WebApi.Repositories;
 
 namespace WebApi.Controllers 
 {
-   [ApiController]
    [Route("api/v1/[controller]")]
-   public class DevicesController : BaseController
+   [ApiController]
+   public class DevicesController : ControllerBase
    {
     private readonly IDeviceRepository _repo;
     private readonly IMapper _mapper;
@@ -31,11 +31,11 @@ namespace WebApi.Controllers
     public async Task<ActionResult<DeviceResponse>> GetDevice(string DeviceId)
     {
         var device = await _repo.DeviceTypeId(DeviceId);
-          if (device == null)
+          if (device != null)
     {
-        return NotFound(); 
-    }
         return Ok(_mapper.Map<DeviceResponse>(device));
+    }
+        return NotFound(); 
     }
 
     [HttpPost]
